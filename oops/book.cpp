@@ -9,8 +9,8 @@ class Book {
     int pages;
 
     public:
-    void setName(string n){  //member functions
-        name = n;
+    void setName(string name){  //member functions
+        this->name = name;
     }
     void setPrice(int p){
         price = p;

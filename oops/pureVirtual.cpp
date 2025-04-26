@@ -22,4 +22,5 @@ int main(){
     Child c;
     c.b = 4;
     cout<<c.b<<endl;
+    c.func();
 }

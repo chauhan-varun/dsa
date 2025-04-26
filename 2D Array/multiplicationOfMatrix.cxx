@@ -6,9 +6,9 @@ int main(){
 	cin>>m;
 	cout<<"enter number of columns of matrix 1: ";
 	cin>>n;
-	cout<<"enter number of rows of matrix 2 : ";
+	cout<<"enter number of rows of matrix 2: ";
 	cin>>p;
-	cout<<"enter number of columns of matrix 2 : ";
+	cout<<"enter number of columns of matrix 2: ";
 	cin>>q;
 	cout<<"enter elements of matrix 1: "<<endl;
 	int arr[m][n];
