@@ -40,7 +40,7 @@ class Book {
     }
 };
 
-int main(){
+int main(){ 
     Book alladin;
     alladin.setName("alladin");
     alladin.setPages(44);

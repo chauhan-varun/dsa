@@ -14,6 +14,39 @@ int main()
 {
     Student s1;
     ofstream fout("student.txt");
+    if(fout.is_open()) {
+        s1.name = "varun";
+        s1.marks = 99;
+        s1.rollNo = 12;
+        fout<<s1.name<<s1.marks<<s1.rollNo<<endl;
+    } else {
+        cout<<"unable to open file";
+    }
+
+    ofstream appendFile("student.txt", ios::app);
+    if(appendFile.is_open()) {
+        s1.name = "varun";
+        s1.marks = 99;
+        s1.rollNo = 12;
+        appendFile<<s1.name<<s1.marks<<s1.rollNo<<endl;
+    } else {
+        cout<<"unable to append file";
+    }
+
+    ifstream finp("student.txt");
+    if(finp.is_open()) {
+        s1.name = "varun";
+        s1.marks = 99;
+        s1.rollNo = 12;
+        finp>>s1.name>>s1.marks>>s1.rollNo;
+    } else {
+        cout<<"unable to open file";
+    }
+
+}
+
+/*
+ofstream fout("student.txt");
     if(fout.is_open()){
         s1.name = "varun";
         s1.rollNo = 276;
@@ -46,5 +79,4 @@ int main()
     } else {
         cout<<"unable to open file for reading";
     }
-
-}
+*/
