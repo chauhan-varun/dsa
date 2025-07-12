@@ -1,11 +1,14 @@
 #include<iostream>
 #include<vector>
+
 using namespace std;
 void swap(int &x, int &y){
 	int temp=x;
 	x=y;
 	y=temp;
 }
+
+void
 int main(){
 	cout<<"enter the size of matrix : ";
 	int n;
