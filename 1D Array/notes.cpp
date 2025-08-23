@@ -2,7 +2,9 @@
 using namespace std;
 
 int main()
+
 {
+	
 	int x,n1, n2, n5, n10, n20, n50, n100, n200, n500, n2000;
 	cin>>x;
 	n1=n2=n5=n10=n20=n50=n100=n200=n500=n2000=0;

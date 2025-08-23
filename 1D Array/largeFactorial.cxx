@@ -2,6 +2,7 @@
 #include<vector>
 using namespace std;
 void multiply(vector<int> &result, int x){
+	
 	int carry=0;
 	for(int i=0; i<result.size(); i++){
 		int product= result[i] * x + carry;

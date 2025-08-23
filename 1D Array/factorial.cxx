@@ -1,6 +1,8 @@
 #include<iostream>
 using namespace std;
 int main(){
+	
+	
 	int n;
 	cin>>n;
 	int fact=1;
