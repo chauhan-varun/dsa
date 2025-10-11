@@ -20,7 +20,6 @@ void print(Node* head ) {
 }
 
 Node* insertHead(Node* head, int x){
-  Node* temp = head;
   return new Node(x, head);
 }
 
