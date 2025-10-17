@@ -1,52 +1,47 @@
 #include <bits/stdc++.h>
+#include <iterator>
 using namespace std;
-class Queue {
-  int *arr;
+
+class CQueue {
+private:
   int front;
   int rear;
-  int size;
+  int cap;
+  int* arr;
 
-public:
-  Queue() {
-    size = 10001;
-    arr = new int[size];
+  public:
+  CQueue(int cap){
     front = rear = -1;
+    this->cap = cap;
+    arr = new int[cap];
+  }
+  
+  bool isEmpty() {
+    return (front == -1);
   }
 
-  bool enqueue(int x) {
-    if (isFull())
-      return false;
+  bool isFull() {
+    return ((rear + 1) % cap == front);
+  }
 
-    if (front == -1) {
+  void enqueue(int x){
+    if(isFull()) return;
+    
+    if(isEmpty()) {
       front = rear = 0;
     } else {
-      rear = (rear + 1) % size;
+      rear = (rear + 1 ) % cap;
     }
     arr[rear] = x;
-
-    return true;
   }
+  
+  void dequeue() {
+    if(isEmpty()) return;
 
-  int dequeue() {
-    if (isEmpty())
-      return -1;
-
-    int ans = arr[front];
-    arr[front] = -1;
-    
-    if (front == rear) {
+    if(front == rear) {
       front = rear = -1;
     } else {
-      front = (front+1) % size;
+      front = (front+1) % cap;
     }
-    return ans;
-  }
-
-  bool isEmpty() { return (front == -1 && rear == -1); }
-
-private:
-  bool isFull() {
-    return ((front == 0 && rear == size - 1) &&
-            (rear == (front - 1) % (size - 1)));
   }
 };

@@ -1,32 +1,44 @@
 #include <bits/stdc++.h>
 using namespace std;
-class Stack {
-  int size;
-  int * arr;
-  int top;
 
-  Stack(int size) {
-    top = -1;
-    this->size = size;
-    arr = new int[size];
+class Stack {
+private:
+  int size;
+  int cap;
+  int *arr;
+
+  public:
+  Stack(int cap) {
+    size = 0;
+    this->cap = cap;
+    arr = new int[cap];
   }
 
-public: 
   void push(int x) {
-    top++;
-    arr[top] = x;
+    if(isFull()) return;
+    arr[size] = x;
+    size++;
   }
 
   void pop() {
-    top--;
+    if(isEmpty()) return;
+    arr[--size] = -1;
   }
 
-  int Top() {
-    return arr[top];
+  int peek() {
+    if(isEmpty()) return -1;
+
+    return arr[size-1];
   }
 
-  int Size() {
-    return top+1;
+  bool isFull() {
+    if (size == cap)
+      return true;
+    return false;
   }
-  
+
+  bool isEmpty() {
+    if(size == 0) return true;
+    return false;
+  }
 };
