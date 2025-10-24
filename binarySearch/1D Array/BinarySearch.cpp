@@ -1,6 +1,4 @@
-#include <algorithm>
 #include <bits/stdc++.h>
-#include <vector>
 using namespace std;
 int bs(vector<int> &arr, int x) {
   sort(arr.begin(), arr.end());
