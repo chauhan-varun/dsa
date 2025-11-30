@@ -28,6 +28,7 @@ Node* removeHead(Node* head) {
   temp = temp->next;
   delete head;
   return temp;
+  
 }
 
 Node* removeTail(Node* head) {
@@ -53,17 +54,26 @@ Node* removeK(Node* head, int k) {
     return head;
   }
 
-  int count = 0;
+  int count = 1;
   Node* temp = head;
-  Node* prev = NULL;
-  while(temp != NULL){
+  // Node* prev = NULL;
+  // while(temp != NULL){
+  //   count++;
+  //   if(count == k) {
+  //     prev->next = prev->next->next;
+  //     delete temp;
+  //     break;
+  //   }
+  //   prev = temp;
+  //   temp = temp->next;
+  // }
+  //
+  while(temp){
     count++;
-    if(count == k) {
-      prev->next = prev->next->next;
-      delete temp;
+    if(count == k){
+      temp->next = temp->next->next;
       break;
     }
-    prev = temp;
     temp = temp->next;
   }
   return head;
@@ -81,6 +91,6 @@ void print(Node* head) {
 int main() {
   vector<int> arr = {23,4,4,5,56,3};
   Node* head = arrToLL(arr);
-  Node* ans = removeK(head, 3);
+  Node* ans = removeK(head, 6);
   print(ans);
 }

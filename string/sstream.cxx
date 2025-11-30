@@ -1,13 +1,15 @@
-#include<iostream>
-#include<string>
-#include<sstream>
+#include <bits/stdc++.h>
+#include <cctype>
+#include <string>
 using namespace std;
-int main(){
-    string str="mansi is a wrost teacher";
-    //getline(cin,s)--> for input
-    stringstream ss(str);
-    string temp;
-    while(ss>>temp){
-    	cout<<temp<<endl;
-    }
+int main() {
+  string str = "mansi is a wrost teacher";
+  // getline(cin,s)--> for input
+  // stringstream ss(str);
+  // string temp;
+  // while(ss>>temp){
+  // 	cout<<temp<<endl;
+  // }
+  char c = 'a';
+
 }

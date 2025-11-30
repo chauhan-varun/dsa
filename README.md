@@ -113,20 +113,40 @@ Various sorting algorithms and applications:
   - Replace with ranks (0 to n-1)
 - **Utilities**: Check if sorted, minimum possible sum
 
-### Searching (9+ implementations)
-Search algorithms and techniques:
-- **Binary Search**: Standard and variations
-- **Linear Search**: Basic implementation
-- **Binary Search Applications**:
+### Binary Search (20+ implementations)
+Search algorithms and binary search applications:
+- **Basic Binary Search**:
+  - Standard binary search
+  - Linear search
+  - Binary search in 1D arrays
+- **Binary Search on Rotated Arrays**:
+  - Binary search in rotated sorted array
+  - Binary search in rotated sorted array II
+  - Find kth rotation
+  - Minimum in rotated array
+- **Peak Finding**:
   - Find peak element
+  - Peak index in mountain array
+- **Bounds & Special Searches**:
   - Lower and upper bound
+  - Single element in sorted array
   - Search in 2D matrix
   - Search in infinite array
-  - Square root (integer)
+  - Smallest missing positive integer
   - K-range queries
-- **Special Problems**: Smallest missing positive integer
+- **Advanced Problems (Answers Subfolder)**:
+  - Aggressive Cows (Binary search on answer)
+  - Book Allocation Problem
+  - Find square root of integer
+  - Nth root of integer
+  - Median of two sorted arrays
+  - Minimum days to make bouquets
+  - Minimize max distance to gas station
+  - Capacity to ship packages within D days
+  - Find smallest divisor given threshold
+  - Split array largest sum
 
-### String (11+ implementations)
+### String (22+ implementations)
 String manipulation and algorithms:
 - **Character Analysis**:
   - Count vowels and consonants
@@ -140,6 +160,19 @@ String manipulation and algorithms:
   - String to integer (stoi)
   - Find max number in string array
   - Neighbor different characters
+  - Convert to upper and lower case
+  - Custom sorting
+  - Reverse string
+- **Pattern Matching & Replacement**:
+  - Find and replace pattern
+  - Remove all adjacent duplicates
+  - Remove all occurrences of substring
+  - Decode the message
+- **Advanced Problems**:
+  - Count palindromic substrings
+  - Palindrome check
+  - Number of laser beams in a bank
+  - Minimum amount to pick garbage
 - **Stream Processing**: String stream (sstream) operations
 
 ### Pattern Printing (27+ implementations)
@@ -156,6 +189,44 @@ Comprehensive pattern printing programs:
   - Pascal's Triangle (optimized)
   - NSP-NST patterns
 - **Special Shapes**: Bridges (star, number, alphabet)
+
+### Binary Search Tree (BST)
+Binary search tree implementations:
+- **Coming Soon**: This section is currently being developed
+
+### Graph (2+ implementations)
+Graph data structure and algorithms:
+- **Graph Representation**: Adjacency list and adjacency matrix
+- **Traversal Algorithms**:
+  - Breadth-First Search (BFS)
+  - More algorithms coming soon
+
+### Heaps (3+ implementations)
+Heap data structure and applications:
+- **Heap Implementation**: Basic heap operations
+- **Heap Sort**: Sorting using heap data structure
+- **Priority Queue Applications**: Using heaps for efficient operations
+
+### Tree (6+ implementations)
+Binary tree and tree-based algorithms:
+- **Tree Traversals**:
+  - Preorder, Inorder, Postorder traversals
+- **String Problems on Trees**:
+  - Maximum distinct substrings
+  - Minimum mirror pair distance
+  - Minimum operations to equalize subarray
+- **Tree Construction and Manipulation**
+
+### Lab Assignments (9+ implementations)
+Academic lab assignments covering various DSA topics:
+- Array operations and manipulations
+- Stack and Queue implementations (using arrays and linked lists)
+- Single linked list operations
+- Sorting algorithm implementations
+- Searching techniques
+- Postfix expression evaluation
+- Tree operations
+- Traversal and counting problems
 
 ### Object-Oriented Programming (12+ implementations)
 OOP concepts in C++:
@@ -184,13 +255,17 @@ OOP concepts in C++:
 - **Two Pointer Technique** - Various problems (2Sum, 3Sum, 4Sum)
 - **Sliding Window** - Subarray problems
 - **Binary Search Variants** - Peak finding, bounds, 2D search
+- **Binary Search on Answer** - Aggressive cows, book allocation, capacity problems
 - **Expression Conversion** - All infix/postfix/prefix combinations
 - **Recursion & Backtracking** - Permutations, combinations, maze solving
+- **Graph Algorithms** - BFS traversal, graph representation
+- **Heap Sort** - Sorting using heap data structure
+- **Tree Traversals** - Preorder, inorder, postorder
 
 ## 📊 Statistics
 
-- **Total Categories**: 12
-- **Total Implementations**: 180+
+- **Total Categories**: 16
+- **Total Implementations**: 230+
 - **Primary Language**: C++ (.cpp, .cxx files)
 - **Supporting Languages**: Java (for specific problems)
 
@@ -225,4 +300,4 @@ Each file focuses on a specific algorithm or problem, providing clean and unders
 
 ---
 
-**Last Updated**: October 2025
+**Last Updated**: November 2025

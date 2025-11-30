@@ -44,17 +44,20 @@ Node* reverseLL(Node* head) {
   return prev;
 }
 
-Node* reverse(Node* head) {
-  if(head == NULL || head->next == NULL) {
-    return head;
+Node* reverse(Node* head){
+  Node* prev = NULL;
+  Node* temp = head;
+  while(temp){
+    Node* next = temp->next;
+    temp->next = prev;
+    
+    prev = temp;
+    temp = next;
   }
-  Node* newHead = reverse(head->next);
-  Node* front = head->next;
-  front->next = head;
-  head->next = NULL;
-
-  return newHead;
+  return prev;
 }
+
+
 
 int main() {
   vector<int> arr = {1,23,4,5,6};
