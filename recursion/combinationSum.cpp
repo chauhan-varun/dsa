@@ -1,28 +1,21 @@
-#include<iostream>
-#include<vector>
+#include<bits/stdc++.h>
+#include <vector>
 using namespace std;
 
-void combinationSum(vector<int> v, int arr[], int n, int target, int idx){
-    if(target==0){
-        for(int i=0; i<v.size(); i++){
-            cout<<v[i]<<" ";
+void combination(vector<int>& arr, vector<vector<int>>& ans, vector<int>& temp, int x, int i){
+    if(i == arr.size()){
+        if(x == 0){
+            ans.push_back(temp);
         }
-        cout<<endl;
         return;
     }
-    if(target<0) return;
-    for(int i=idx; i<n; i++){
-        v.push_back(arr[i]);
-        combinationSum(v, arr, n, target-arr[i], i);
-        v.pop_back();
 
+    if(arr[i] <= x) {
+        temp.push_back(arr[i]);
+        combination(arr, ans, temp, x-arr[i], i);
+        temp.pop_back();
     }
-} 
 
-int main(){
-    int arr[]={2,3,5};
-    int n= sizeof(arr)/sizeof(arr[0]);
-    vector<int> v;
-    int sum=8;
-    combinationSum(v, arr, n, sum, 0);
+    combination(arr, ans, temp, x, i+1);
 }
+
