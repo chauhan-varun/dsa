@@ -1,28 +1,34 @@
 #include <bits/stdc++.h>
+#include <vector>
 using namespace std;
 struct Item {
-  int value;
-  int wt;
+  int val, wt;
 };
-
 class Solution {
 public:
-  bool static cmp(Item i1, Item i2){
-    return (((double)i1.value/i1.wt) > ((double)i2.value/i2.wt));
+  static bool cmp(Item a, Item b) {
+    return ((double)a.val / a.wt > (double)b.val / b.wt);
   }
-  double fractionalKnapsack(int W, Item arr[], int n) {
-    sort(arr, arr + n, cmp);
-    
-    double val = 0.0;
-    for(int i = 0; i<n; i++){
-      if(arr[i].wt<=W){
-        W-=arr[i].wt;
-        val+=arr[i].value;
+  double fractionalKnapsack(vector<int> &val, vector<int> &wt, int capacity) {
+    int n = val.size();
+    vector<Item> items(n);
+    for (int i = 0; i < n; i++) {
+      items[i] = {val[i], wt[i]};
+    }
+
+    sort(items.begin(), items.end(), cmp);
+
+    double total = 0.0;
+
+    for (Item &it : items) {
+      if (it.wt <= capacity) {
+        capacity -= it.wt;
+        total += it.val;
       } else {
-        val+=((double)arr[i].value/arr[i].wt*W);
+        total += (((double)it.val / it.wt) * capacity);
         break;
       }
     }
-    return val;
+    return total;
   }
 };

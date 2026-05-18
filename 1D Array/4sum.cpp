@@ -1,7 +1,4 @@
-#include <algorithm>
 #include <bits/stdc++.h>
-#include <set>
-#include <vector>
 using namespace std;
 vector<vector<int>> fourSum(vector<int> &arr, int x){
   set<vector<int>> ans;
