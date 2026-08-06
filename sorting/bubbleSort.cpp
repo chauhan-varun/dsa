@@ -1,26 +1,20 @@
-#include <bits/stdc++.h>
-
+#include <iostream>
 using namespace std;
-
 int main() {
-  int arr[] = {3, 4, 1, 3, 5, 2, 5, 7, 3};
-  int n = sizeof(arr) / sizeof(arr[0]); // 9
-
-  bool swapped;
-  for(int i=n-1; i>0; i--){
-    
-    swapped = false;
-    for(int j=0; j<i; j++){
-      if(arr[j]>arr[j+1]){
-        swap(arr[j], arr[j+1]);
-        swapped = true;
+  int arr[] = {2, 6, 8, 4, 3, 5, 7, 9};
+  int n = 8;
+  for (int i = 0; i < n - 1; i++) {
+    bool flag = 1;
+    for (int j = 0; j < n - 1 - i; j++) {
+      if (arr[j] > arr[j + 1]) {
+        swap(arr[j], arr[j + 1]);
+        flag = 0;
       }
     }
-    if(swapped == false) break;
+    if (flag == 1)
+      break;
   }
-
-  for (auto x : arr) {
-    cout << x << " ";
+  for (int i = 0; i < n; i++) {
+    cout << arr[i];
   }
-  return 0;
 }

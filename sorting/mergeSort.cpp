@@ -1,58 +1,59 @@
-#include<bits/stdc++.h>
-using namespace std; 
-
-void merge(vector<int> &arr, int start, int mid, int end){
-  // start - mid
-  // mid +1 - end
-  int left = start;
-  int right = mid+1;
-  vector<int> temp;
-  while(left<=mid && right<=end){
-    if(arr[left]<=arr[right]){
-      temp.push_back(arr[left]);
-      left++;
+#include <iostream>
+#include <vector>
+using namespace std;
+void display(vector<int> &a) {
+  for (int i = 0; i < a.size(); i++) {
+    cout << a.at(i) << " ";
+  }
+  cout << endl;
+}
+vector<int> merge(vector<int> &v1, vector<int> &v2) {
+  int s1 = v1.size();
+  int s2 = v2.size();
+  vector<int> v(s1 + s2);
+  int i = 0, j = 0, k = 0;
+  while (i < s1 && j < s2) {
+    if (v1[i] < v2[j]) {
+      v[k] = v1[i];
+      i++;
     } else {
-      temp.push_back(arr[right]);
-      right++;
+      v[k] = v2[j];
+      j++;
+    }
+    k++;
+  }
+  if (i == s1) {
+    while (j < s2) {
+      v[k] = v2[j];
+      k++;
+      j++;
     }
   }
-
-  while(left<=mid){
-    temp.push_back(arr[left]);
-    left++;
+  if (j == s2) {
+    while (i < s1) {
+      v[k] = v1[i];
+      k++;
+      i++;
+    }
   }
-
-  while(right<=end){
-    temp.push_back(arr[right]);
-    right++;
-  }
-
-  for(int i=start; i<=end; i++){
-    arr[i] = temp[i-start];
-  }
-}
-
-void mergeSort(vector<int> &arr, int start, int end){
-  if(start>=end) return;
-  int mid = (start + end) / 2;
-  mergeSort(arr,start, mid);
-  mergeSort(arr, mid+1, end);
-  merge(arr, start, mid, end);
+  return v;
 }
 int main() {
-  vector<int> v;
-  int n;
-  cout<<"Enter the size of Array\n";
-  cin>>n;
-  cout<<"Enter the elements of Array\n";
-  for(int i=0; i<n; i++){
-    int x;
-    cin>>x;
-    v.push_back(x);
+  vector<int> v1;
+  int a = 1;
+  for (int i = 0; i < 4; i++) {
+    v1.push_back(a);
+    a += 2;
+  }
+  vector<int> v2;
+  a = 2;
+  for (int i = 0; i < 6; i++) {
+    v2.push_back(a);
+    a += 2;
   }
 
-  mergeSort(v, 0, n-1);
-  for(auto x: v){
-    cout<<x<<" ";
-  }
+  display(v1);
+  display(v2);
+  vector<int> v = merge(v1, v2);
+  display(v);
 }
