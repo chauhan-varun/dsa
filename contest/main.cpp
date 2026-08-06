@@ -42,40 +42,7 @@ void setup() {
 
 // ── Solution ──────────────────────────────────────────────────
 void solve() {
-  int n;
-  cin >> n;
 
-  unordered_map<int, int> frequency;
-  long long totalDamage = 0;
-
-  for (int i = 0; i < n; i++) {
-    int damage;
-    cin >> damage;
-
-    frequency[damage]++;
-    totalDamage += damage;
-  }
-
-  int dominantDamage = 0;
-  int maxFrequency = 0;
-
-  for (const auto &[damage, count] : frequency) {
-    if (count > maxFrequency) {
-      maxFrequency = count;
-      dominantDamage = damage;
-    }
-  }
-
-  int otherCards = n - maxFrequency;
-
-  int usableDominantCards = otherCards + 2;
-
-  if (maxFrequency > usableDominantCards) {
-    int unusableCards = maxFrequency - usableDominantCards;
-    totalDamage -= 1LL * unusableCards * dominantDamage;
-  }
-
-  cout << totalDamage << '\n';
 }
 
 // ── Main ──────────────────────────────────────────────────────
