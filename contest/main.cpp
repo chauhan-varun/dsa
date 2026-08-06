@@ -42,22 +42,7 @@ void setup() {
 
 // ── Solution ──────────────────────────────────────────────────
 void solve() {
-  int n;
-  cin >> n;
-  int minus = 0, plus = 0;
-  for (int i = 0; i < n; i++) {
-    int x;
-    cin >> x;
-    if (x < 0)
-      minus++;
-    else
-      plus++;
-  }
-  int diff = abs(minus - plus);
-  if (diff % 4 == 0)
-    yes;
-  else
-    no;
+
 }
 
 // ── Main ──────────────────────────────────────────────────────
