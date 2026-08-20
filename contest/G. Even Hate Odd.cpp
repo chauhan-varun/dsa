@@ -7,7 +7,6 @@ typedef pair<int, int> pii;
 typedef pair<ll, ll> pll;
 typedef vector<int> vi;
 typedef vector<ll> vll;
-const int MOD = 1000000007;
 
 // ── Macros ────────────────────────────────────────────────────
 #define pb push_back
@@ -40,15 +39,30 @@ void setup() {
   ios_base::sync_with_stdio(false);
   cin.tie(NULL);
 }
-long sumOfGroup(int k) {
-  // Return the sum of the elements of the k'th group.
-}
+
 // ── Solution ──────────────────────────────────────────────────
 void solve() {
-  int n;
+  ll n;
   cin >> n;
-  ll ans = (n * n) % MOD;
-  cout << ans << endl;
+
+  ll odd = 0, even = 0;
+
+  rep(i, 0, n) {
+    ll x;
+    cin >> x;
+    if (x % 2 == 0)
+      even++;
+    else
+      odd++;
+  }
+  if (n % 2)
+    cout << -1 << '\n';
+  else {
+    if (odd > even)
+      swap(odd, even);
+
+    cout << (even - odd) / 2 << '\n';
+  }
 }
 
 // ── Main ──────────────────────────────────────────────────────

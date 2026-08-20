@@ -40,15 +40,30 @@ void setup() {
   ios_base::sync_with_stdio(false);
   cin.tie(NULL);
 }
-long sumOfGroup(int k) {
-  // Return the sum of the elements of the k'th group.
-}
+
 // ── Solution ──────────────────────────────────────────────────
 void solve() {
-  int n;
-  cin >> n;
-  ll ans = (n * n) % MOD;
-  cout << ans << endl;
+  int n, m;
+  cin >> n >> m;
+  unordered_set<char> letters;
+
+  for (int i = 0; i < n; i++) {
+    string word;
+    cin >> word;
+    letters.insert(word[0]);
+  }
+
+  bool possible = true;
+  for (int i = 0; i < m; i++) {
+    string word;
+    cin >> word;
+    for (char &c : word) {
+      if (letters.find(c - 'A' + 'a') == letters.end()) {
+        possible = false;
+      }
+    }
+  }
+  cout << (possible ? "YES\n" : "NO\n");
 }
 
 // ── Main ──────────────────────────────────────────────────────
