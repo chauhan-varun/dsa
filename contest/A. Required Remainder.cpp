@@ -1,3 +1,4 @@
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -40,15 +41,12 @@ void setup() {
   ios_base::sync_with_stdio(false);
   cin.tie(NULL);
 }
-long sumOfGroup(int k) {
-  // Return the sum of the elements of the k'th group.
-}
+
 // ── Solution ──────────────────────────────────────────────────
 void solve() {
-  int n;
-  cin >> n;
-  ll ans = (n * n) % MOD;
-  cout << ans << endl;
+  ll x, y, n;
+  cin >> x >> y >> n;
+  cout << n - (n - y) % x << endl;
 }
 
 // ── Main ──────────────────────────────────────────────────────

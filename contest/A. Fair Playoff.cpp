@@ -1,3 +1,4 @@
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -7,7 +8,6 @@ typedef pair<int, int> pii;
 typedef pair<ll, ll> pll;
 typedef vector<int> vi;
 typedef vector<ll> vll;
-const int MOD = 1000000007;
 
 // ── Macros ────────────────────────────────────────────────────
 #define pb push_back
@@ -40,15 +40,20 @@ void setup() {
   ios_base::sync_with_stdio(false);
   cin.tie(NULL);
 }
-long sumOfGroup(int k) {
-  // Return the sum of the elements of the k'th group.
-}
+
 // ── Solution ──────────────────────────────────────────────────
 void solve() {
-  int n;
-  cin >> n;
-  ll ans = (n * n) % MOD;
-  cout << ans << endl;
+  int arr[4] = {};
+  for (int i = 0; i < 4; i++) {
+    cin >> arr[i];
+  }
+  int maxi = max(arr[0], arr[1]);
+  int maxi2 = max(arr[2], arr[3]);
+  if ((maxi < arr[2] && maxi < arr[3]) || maxi2 < arr[0] && maxi2 < arr[1]) {
+    cout << "NO\n";
+  } else {
+    cout << "YES\n";
+  }
 }
 
 // ── Main ──────────────────────────────────────────────────────
